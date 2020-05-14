@@ -14,7 +14,7 @@ This docker-compose aims to reduce as much as possible specific knowledge requir
 ## How to use
 Run vulcan-core:
 ```bash
-git clone git:github.com:adevinta/vulcan-core-compose.git
+git clone git@github.com:adevinta/vulcan-core-compose.git
 cd vulcan-core-compose
 docker-compose build
 docker-compose up -d
