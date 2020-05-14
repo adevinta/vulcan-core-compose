@@ -1,0 +1,14 @@
+{
+    "checktype": {
+        "name": "vulcan-exposed-http-experimental",
+        "description": "Checks if an asset has HTTP well known ports open",
+        "timeout": 300,
+        "enabled": true,
+        "options": null,
+        "image": "registry.hub.docker.com/vulcansec/vulcan-exposed-http:experimental",
+        "assets": [
+            "Hostname",
+            "IP"
+        ]
+    }
+}

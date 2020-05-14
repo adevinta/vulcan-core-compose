@@ -1,0 +1,13 @@
+{
+  "checktype": {
+    "name": "vulcan-retirejs",
+    "description": "Checks web pages for vulnerable JavaScript libraries",
+    "timeout": 300,
+    "enabled": true,
+    "options": null,
+    "image": "registry.hub.docker.com/vulcansec/vulcan-retirejs:master",
+    "assets": [
+      "Hostname"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "checktype": {
+    "name": "vulcan-exposed-http-resources",
+    "description": "This checks looks for a well known or custom list of exposed resources in an HTTP address",
+    "timeout": 300,
+    "enabled": true,
+    "options": null,
+    "image": "registry.hub.docker.com/vulcansec/vulcan-exposed-http-resources:master",
+    "assets": [
+      "Hostname",
+      "WebAddress"    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+    "checktype": {
+        "name": "vulcan-dkim",
+        "description": "Checks if a domain have valid DNS configuration for DKIM",
+        "timeout": 60,
+        "enabled": true,
+        "options": null,
+        "image": "registry.hub.docker.com/vulcansec/vulcan-dkim:master",
+        "assets": [
+            "DomainName"
+        ]
+    }
+}

@@ -1,0 +1,100 @@
+version: '3.7'
+services:
+  postgres:
+    image: postgres:9.6-alpine
+    environment:
+      POSTGRES_DB: persistence
+      POSTGRES_USER: pguser
+      POSTGRES_PASSWORD: pgpassword
+    ports:
+      - 5432
+    restart: unless-stopped
+  minio:
+    image: bitnami/minio:2020.5.8
+    ports:
+      - 9000:9000
+    env_file:
+      - ./config/minio/config.env
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+  events:
+    image: pafortin/goaws:v0.3.1
+    ports:
+      - 4100:4100
+    volumes:
+      - ./config/vulcan-events:/conf
+  results:
+    image: adevinta/vulcan-results
+    command: ['sh', '-c', 'apk add curl; ./run.sh']
+    depends_on:
+      - "minio"
+    ports:
+      - 8081:80
+    env_file:
+      - ./config/vulcan-results/config.env
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/healthcheck"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+    restart: unless-stopped
+  stream:
+    depends_on:
+      - "postgres"
+    image: adevinta/vulcan-stream
+    command: ['sh', '-c', 'apk add postgresql-client; until pg_isready -h postgres -t 10; do echo "Waiting for postgres" && sleep 2; done; apk add curl; ./run.sh']
+    ports:
+      - 8085:80
+    env_file:
+      - ./config/vulcan-stream/config.env
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/status"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+    restart: unless-stopped
+  insights:
+    depends_on:
+      - minio
+    image: pottava/s3-proxy:2.0
+    ports:
+      - 8088:80
+    env_file:
+      - ./config/vulcan-insights/config.env
+    restart: unless-stopped
+  persistence:
+    depends_on:
+      - "postgres"
+      - "events"
+      - "minio"
+    image: adevinta/vulcan-persistence
+    command: ['sh', '-c', 'apk add postgresql-client; until pg_isready -h postgres -t 10; do echo "Waiting for postgres" && sleep 2; done; apk add curl; ./run.sh']
+    ports:
+      - 3000:80
+    env_file:
+      - ./config/vulcan-persistence/config.env
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/status"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+    restart: unless-stopped
+  bootstrap:
+    depends_on:
+      - postgres
+      - persistence
+    build:
+      context: ./bootstrap
+    env_file:
+      - ./config/bootstrap/config.env
+  agent:
+    build:
+      context: ./agent
+  tools:
+    build:
+      context: ./tools
+    env_file:
+      - ./config/tools/config.env

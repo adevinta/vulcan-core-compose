@@ -1,0 +1,13 @@
+{
+  "checktype": {
+    "name": "vulcan-tls-experimental",
+    "description": "Analyzes TLS health of an asset using Mozilla Observatory",
+    "timeout": 600,
+    "enabled": true,
+    "options": null,
+    "image": "registry.hub.docker.com/vulcansec/vulcan-tls:experimental",
+    "assets": [
+      "Hostname"
+    ]
+  }
+}

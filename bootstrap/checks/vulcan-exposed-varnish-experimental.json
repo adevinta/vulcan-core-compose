@@ -1,0 +1,14 @@
+{
+    "checktype": {
+        "name": "vulcan-exposed-varnish-experimental",
+        "description": "Checks if an asset has a Varnish server exposed",
+        "timeout": 300,
+        "enabled": true,
+        "options": null,
+        "image": "registry.hub.docker.com/vulcansec/vulcan-exposed-varnish:experimental",
+        "assets": [
+            "Hostname",
+            "IP"
+        ]
+    }
+}

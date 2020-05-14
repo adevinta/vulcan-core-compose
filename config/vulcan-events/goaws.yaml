@@ -1,0 +1,37 @@
+Local:
+  Host: events
+  Port: 4100
+  AccountId: "012345678900"
+  LogToFile: false
+  QueueAttributeDefaults:
+    VisibilityTimeout: 30
+    ReceiveMessageWaitTimeSeconds: 0
+  Queues:
+    - Name: VulcanK8SAPIScans
+    - Name: VulcanK8SChecksGeneric
+    - Name: VulcanK8SChecksTenable
+    - Name: VulcanK8SMetricsChecks
+    - Name: VulcanK8SMetricsScans
+    - Name: VulcanK8SScanEngineChecks
+  Topics:
+    - Name: VulcanK8SChecks
+      Subscriptions:
+        - QueueName: VulcanK8SMetricsChecks
+          Raw: true
+        - QueueName: VulcanK8SScanEngineChecks
+          Raw: true
+        - QueueName: VulcanK8SChecksGeneric
+          Raw: true
+          # FilterPolicy: '{"event": ["AGENT_CHECK"], "checktype": [{"anything-but": ["vulcan-nessus", "vulcan-nessus-experimental"]}]}'
+        - QueueName: VulcanK8SChecksTenable
+          Raw: true
+          # FilterPolicy: '{"event": ["AGENT_CHECK"], "checktype": ["vulcan-nessus", "vulcan-nessus-experimental"]}'
+    - Name: VulcanK8SScans
+      Subscriptions:
+        - QueueName: VulcanK8SAPIScans
+          Raw: true
+        - QueueName: VulcanK8SMetricsScans
+          Raw: true
+  RandomLatency:
+    Min: 0
+    Max: 0

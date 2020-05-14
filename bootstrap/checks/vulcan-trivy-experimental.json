@@ -1,0 +1,18 @@
+{
+  "checktype": {
+    "name": "vulcan-trivy-experimental",
+    "description": "Scan docker images using aquasec/trivy",
+    "timeout": 600,
+    "enabled": true,
+    "options": null,
+    "required_vars": [
+      "REGISTRY_DOMAIN",
+      "REGISTRY_USERNAME",
+      "REGISTRY_PASSWORD"
+    ],
+    "image": "registry.hub.docker.com/vulcansec/vulcan-trivy:experimental",
+    "assets": [
+      "DockerImage"
+    ]
+  }
+}

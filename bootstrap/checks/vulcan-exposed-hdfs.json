@@ -1,0 +1,14 @@
+{
+    "checktype": {
+        "name": "vulcan-exposed-hdfs",
+        "description": "Checks if an asset has an Hadoop HDFS port exposed",
+        "timeout": 300,
+        "enabled": true,
+        "options": null,
+        "image": "registry.hub.docker.com/vulcansec/vulcan-exposed-hdfs:master",
+        "assets": [
+            "Hostname",
+            "IP"
+        ]
+    }
+}

@@ -1,0 +1,7 @@
+{
+  "jobqueue": {
+    "name": "VulcanK8SChecksGeneric",
+    "arn": "arn:aws:sqs::012345678900:VulcanK8SChecksGeneric",
+    "description": "Vulcan SQS default queue"
+  }
+}

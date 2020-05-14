@@ -1,0 +1,14 @@
+{
+  "checktype": {
+    "name": "vulcan-exposed-db",
+    "description": "Checks if an asset has database well known ports open",
+    "timeout": 300,
+    "enabled": true,
+    "options": null,
+    "image": "registry.hub.docker.com/vulcansec/vulcan-exposed-db:master",
+    "assets": [
+      "Hostname",
+      "IP"
+    ]
+  }
+}

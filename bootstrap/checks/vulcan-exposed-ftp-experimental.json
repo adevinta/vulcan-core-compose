@@ -1,0 +1,14 @@
+{
+    "checktype": {
+        "name": "vulcan-exposed-ftp-experimental",
+        "description": "Checks if an asset has FTP well known ports open and if they allow anonymous logins or if they are vulnerable to bounce attack",
+        "timeout": 300,
+        "enabled": true,
+        "options": null,
+        "image": "registry.hub.docker.com/vulcansec/vulcan-exposed-ftp:experimental",
+        "assets": [
+            "Hostname",
+            "IP"
+        ]
+    }
+}

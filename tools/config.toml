@@ -1,0 +1,35 @@
+[analytics]
+ga_id = "id"
+
+[s3]
+upload = true
+private_bucket = "insights"
+public_bucket = "insights"
+region = "local-region"
+endpoint = "http://minio:9000"
+path_style = true
+
+[persistence]
+endpoint = "http://persistence"
+
+[results]
+endpoint = "http://results"
+
+[proxy]
+endpoint = "http://localhost:8088"
+
+[general]
+resources_path = "/tools/resources"
+local_temp_dir = "/tools/output"
+company_name = "acme"
+support_email = "support@example.com"
+contact_email = "contact@example.com"
+contact_channel = "https://channel.example.com"
+documentation_link = "https://docs.example.com/vulcan-api/examples/#how-do-i-list-the-members-of-a-team"
+roadmap_link = "https://roadmap.example.com/roadmap.html"
+jira = "https://jira.example.com"
+
+[endpoints]
+vulcan_ui = "https://vulcan.example.com/"
+view_report = "vulcan-dev.example.com/api/v1/report?team_id=%s&scan_id=%s"
+redirect_url = ""

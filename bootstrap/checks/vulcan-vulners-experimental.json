@@ -1,0 +1,14 @@
+{
+  "checktype": {
+    "name": "vulcan-vulners-experimental",
+    "description": "Runs the nmap-script vulners against the target opened ports",
+    "timeout": 3600,
+    "enabled": true,
+    "options": null,
+    "image": "registry.hub.docker.com/vulcansec/vulcan-vulners:experimental",
+    "assets": [
+      "Hostname",
+      "IP"
+    ]
+  }
+}

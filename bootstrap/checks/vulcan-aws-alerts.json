@@ -1,0 +1,17 @@
+{
+  "checktype": {
+    "name": "vulcan-aws-alerts",
+    "description": "Detects general issues for an AWS account",
+    "timeout": 120,
+    "enabled": true,
+    "options": null,
+    "required_vars": [
+      "VULCAN_ASSUME_ROLE_ENDPOINT",
+      "ROLE_NAME"
+    ],
+    "image": "registry.hub.docker.com/vulcansec/vulcan-aws-alerts:master",
+    "assets": [
+      "AWSAccount"
+    ]
+  }
+}

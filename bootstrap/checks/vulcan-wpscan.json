@@ -1,0 +1,16 @@
+{
+  "checktype": {
+    "name": "vulcan-wpscan",
+    "description": "Runs Wordpress scan",
+    "timeout": 1500,
+    "enabled": true,
+    "options": null,
+    "required_vars": [
+      "WPVULNDB_API_TOKEN"
+    ],
+    "image": "registry.hub.docker.com/vulcansec/vulcan-wpscan:master",
+    "assets": [
+      "Hostname"
+    ]
+  }
+}

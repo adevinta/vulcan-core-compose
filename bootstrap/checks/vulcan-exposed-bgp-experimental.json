@@ -1,0 +1,14 @@
+{
+    "checktype": {
+        "name": "vulcan-exposed-bgp-experimental",
+        "description": "Checks for exposed BGP port on Internet routers",
+        "timeout": 60,
+        "enabled": true,
+        "options": null,
+        "image": "registry.hub.docker.com/vulcansec/vulcan-exposed-bgp:experimental",
+        "assets": [
+            "Hostname",
+            "IP"
+        ]
+    }
+}

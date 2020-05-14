@@ -1,0 +1,14 @@
+{
+  "checktype": {
+    "name": "vulcan-exposed-ssh-experimental",
+    "description": "Checks SSH server configuration for compliance with Mozilla OpenSSH guidelines",
+    "timeout": 300,
+    "enabled": true,
+    "options": null,
+    "image": "registry.hub.docker.com/vulcansec/vulcan-exposed-ssh:experimental",
+    "assets": [
+      "Hostname",
+      "IP"
+    ]
+  }
+}

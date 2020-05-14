@@ -1,0 +1,13 @@
+{
+    "checktype": {
+        "name": "vulcan-dmarc-experimental",
+        "description": "Checks if a domain have valid DNS configuration for DMARC",
+        "timeout": 60,
+        "enabled": true,
+        "options": null,
+        "image": "registry.hub.docker.com/vulcansec/vulcan-dmarc:experimental",
+        "assets": [
+            "DomainName"
+        ]
+    }
+}

@@ -1,0 +1,69 @@
+[agent]
+jobqueue_id = "00000000-0000-0000-0000-000000000000"
+log_level = "debug"
+log_file = ""
+timeout = 300
+
+[scheduler]
+concurrent_jobs = 10
+monitor_interval = 1
+heartbeat_interval = 10
+
+[persistence]
+endpoint = "http://localhost:3000/v1/"
+timeout = 3
+retries = 3
+
+[uploader]
+endpoint = "http://localhost:8081/v1/"
+timeout = 10
+
+[stream]
+endpoint = "ws://localhost:8085/stream"
+timeout = 60
+retries = 5
+retry_interval = 5
+
+[sqs]
+region = "local-region"
+endpoint = "http://localhost:4100"
+polling_interval = 5
+
+[api]
+port = ":8080"
+# iname is required if you are running in Mac
+iname = "en0"
+
+[check]
+abort_timeout = 60
+log_level = "debug"
+
+[check.vars]
+# Required by vulcan-nessus
+NESSUS_ENDPOINT = "https://cloud.tenable.com"
+NESSUS_USERNAME = ""
+NESSUS_PASSWORD = ""
+NESSUS_POLICY_ID = ""
+# Required by vulcan-seekret
+GITHUB_ENTERPRISE_ENDPOINT = ""
+GITHUB_ENTERPRISE_TOKEN = ""
+# Required by vulcan-aws-trusted-advistor
+VULCAN_ASSUME_ROLE_ENDPOINT = ""
+ROLE_NAME = ""
+# Required by vulcan-wpscan
+WPVULNDB_API_TOKEN = ""
+# Required by vulcan-trivy
+REGISTRY_DOMAIN = ""
+REGISTRY_USERNAME = ""
+REGISTRY_PASSWORD = ""
+
+[runtime]
+
+[runtime.docker]
+[runtime.docker.registry]
+server = ""
+user = ""
+pass = ""
+backoff_interval = 5
+backoff_max_retries = 5
+backoff_jitter_factor = 0.5

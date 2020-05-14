@@ -1,0 +1,13 @@
+{
+  "checktype": {
+    "name": "vulcan-http-headers",
+    "description": "Analyzes the HTTP headers using Mozilla Observatory",
+    "timeout": 600,
+    "enabled": true,
+    "options": null,
+    "image": "registry.hub.docker.com/vulcansec/vulcan-http-headers:master",
+    "assets": [
+      "Hostname"
+    ]
+  }
+}

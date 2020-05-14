@@ -1,0 +1,13 @@
+{
+    "checktype": {
+        "name": "vulcan-drupal-experimental",
+        "description": "Checks for some vulnerable versions of Drupal",
+        "timeout": 300,
+        "enabled": true,
+        "options": null,
+        "image": "registry.hub.docker.com/vulcansec/vulcan-drupal:experimental",
+        "assets": [
+            "Hostname"
+        ]
+    }
+}

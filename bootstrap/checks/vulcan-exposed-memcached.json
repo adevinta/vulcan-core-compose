@@ -1,0 +1,14 @@
+{
+    "checktype": {
+        "name": "vulcan-exposed-memcached",
+        "description": "Checks if the asset contains an exposed Memcached server",
+        "timeout": 300,
+        "enabled": true,
+        "options": "{\"port\": 11211}",
+        "image": "registry.hub.docker.com/vulcansec/vulcan-exposed-memcached:master",
+        "assets": [
+            "Hostname",
+            "IP"
+        ]
+    }
+}
