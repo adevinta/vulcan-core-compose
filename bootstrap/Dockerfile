@@ -1,3 +1,5 @@
+# Copyright 2021 Adevinta
+
 FROM alpine
 RUN apk add --no-cache --update postgresql-client curl jq
 WORKDIR /app

@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Copyright 2021 Adevinta
+
 PERSISTENCE_HOST=${PERSISTENCE_HOST:-persistence}
 
 if [ $# -le 1 ]; then
