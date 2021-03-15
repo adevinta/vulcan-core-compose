@@ -1,3 +1,5 @@
+# Copyright 2020 Adevinta
+
 FROM golang:1.13-alpine
 
 # https://dl.min.io/client/mc/release/linux-amd64/mc

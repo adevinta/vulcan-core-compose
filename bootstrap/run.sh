@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Copyright 2020 Adevinta
+
 export PG_PORT=${PG_PORT:-5432}
 export PG_HOST=${PG_HOST:-postgres}
 export PERSISTENCE_HOST=${PERSISTENCE_HOST:-persistence}
