@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Copyright 2020 Adevinta
+
 export MINIO_HOST=${MINIO_HOST:-minio}
 export MINIO_PORT=${MINIO_PORT:-9000}
 export MINIO_ACCESS_KEY=${MINIO_ACCESS_KEY:-fake_key_id}
